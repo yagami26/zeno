@@ -1,0 +1,49 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Jie Fang</title>
+    
+
+    <meta name="description" content="随便写写">
+
+    
+
+    <!---<link rel="icon" href="/assets/img/favicon.png"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+    <h1>{{ SITETITLE }} </h1>
+    <ul>
+        
+        <li>
+            <a href="/me">about</a>
+        </li>
+
+        <li>
+            <a href="https://github.com/yagami26">github</a>
+        </li>
+        
+        
+    </ul>
+</div>
+<div class="blog">
+    <h1>Blog Posts:</h1>
+    <ul>
+ 	       
+       {% for article in articles %}
+	    <li>
+		    <span class="date">{{ article.date.strftime('%d %b %Y') }}</span> - <a href="{{ article.url }}"> {{ article.title }}</a>
+            </li>
+       {% endfor %}
+        
+    </ul>
+</div>
+</body>

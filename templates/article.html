@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>{{ article.title }}</title>
+    
+
+
+    
+
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+	<div class="post__back">
+    	<a href="{{ SITEURL }}">&lt;-- home</a>
+    </div>
+    <div class="post__title">
+    	<h1>{{ article.title }}</h1>
+    </div>
+    <div class="post__date">
+    	<p>{{ article.date.strftime('%b %d, %Y') }}</p>
+    </div>
+    <div class="post__meta">
+    	<p></p>
+    </div>
+    <div class="post__content" ?="">
+	{{ article.content }}
+    </div>
+</div>
+
+    </div>
+
+
+
+
+</body>
