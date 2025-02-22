@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     
-        <title>Jie Fang</title>
+    <title>{{ AUTHOR }}</title>
     
 
     <meta name="description" content="随便写写">
@@ -24,7 +24,7 @@
     <ul>
         
         <li>
-            <a href="/me">about</a>
+		<a href="{{ SITEURL }}/pages/about.html">about</a>
         </li>
 
         <li>
@@ -40,7 +40,7 @@
  	       
        {% for article in articles %}
 	    <li>
-		    <span class="date">{{ article.date.strftime('%d %b %Y') }}</span> - <a href="{{ article.url }}"> {{ article.title }}</a>
+		    <span class="date">{{ article.date.strftime('%d %b %Y') }}</span> - <a href="{{ SITEURL }}/{{ article.url }}"> {{ article.title }}</a>
             </li>
        {% endfor %}
         

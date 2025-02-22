@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     
-        <title>{{ article.title }}</title>
+        <title>{{ page.title }}</title>
     
 
 
@@ -23,16 +23,15 @@
     	<a href="{{ SITEURL }}">&lt;-- home</a>
     </div>
     <div class="post__title">
-    	<h1>{{ article.title }}</h1>
+    	<h1>{{ page.title }}</h1>
     </div>
     <div class="post__date">
-	    <p>{{ article.date.strftime('%b %d, %Y') }}, Posted in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name }}</a></p>
     </div>
     <div class="post__meta">
     	<p></p>
     </div>
     <div class="post__content" ?="">
-	{{ article.content }}
+	{{ page.content }}
     </div>
 </div>
 
