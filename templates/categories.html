@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+    <title>{{ AUTHOR }}</title>
+    
+
+    <meta name="description" content="随便写写">
+
+    
+
+    <link rel="icon" href="{{ SITEURL }}/images/favicon.ico"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+    		<h1>{{ SITETITLE }} </h1>
+    		<ul>
+        
+    			<li><a href="{{ SITEURL }}/pages/about.html">about</a></li>
+    			<li><a href="{{ SITEURL }}/pages/chess.html">chess</a></li>
+			<li><a href="{{ SITEURL }}/tags.html">tags</a></li>
+    		</ul>
+    	</div>
+	<div class="post__back">
+    	<a href="{{ SITEURL }}">&lt;-- home</a>
+    	</div>
+    	<div class="post__content">
+		{% block content %}
+  <h1>Categories</h1>
+  <ul>
+    {% for category, articles in categories | sort(attribute='1|length', reverse=True) %}
+      <li>
+        <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles | length }})
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+    	</div>
+   </div>
+</body>
+

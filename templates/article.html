@@ -27,6 +27,12 @@
     </div>
     <div class="post__date">
 	    <p>{{ article.date.strftime('%b %d, %Y') }}, Posted in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name }}</a></p>
+	    {% if article.tags %} <p>Tagged as  
+    		{% for tag in article.tags %}
+      			<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+    		{% endfor %}
+  	     </p>
+	    {% endif %}
     </div>
     <div class="post__meta">
     	<p></p>
